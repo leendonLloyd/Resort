@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {RoomContext} from "../context";
-// eslint-disable-next-line
-import Rooms from '../pages/Rooms';
 import Loading from './Loading';
 import Room from './Room';
 import Title from './Title';
@@ -15,7 +13,7 @@ export default class FeaturedRooms extends Component {
         })
         return (
             <section className="featured-rooms">
-                <Title title="Featured Rooms"/>
+                <Title title="Our Best Rooms"/>
                 <div className="featured-rooms-center">
                     {loading?<Loading/>:rooms}
                 </div>

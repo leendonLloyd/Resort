@@ -12,7 +12,7 @@ export default function Home () {
         <Hero hero="defaultHero">
             <Banner title="Beat the Summer Heat!" subtitle="Deluxe Rooms starting at &#8369;2999">
                 <Link to="/rooms" className="btn-primary">
-                    Book a Room
+                    Our Rooms
                 </Link>
             </Banner>
         </Hero>

@@ -4,15 +4,30 @@ import {FaAlignRight} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 
 export default class Navbar extends Component {
+
+    propTypes(){
+        return {
+            children: React.PropTypes.any,
+        }
+    }
     state={
         isOpen:false
     }
     handleToggle = () => {
         this.setState({isOpen:!this.state.isOpen})
     }
+    componentDidMount(){
+        window.addEventListener('scroll', () => {
+            let activeClass = 'normal';
+            if (window.scrollY === 0){
+                activeClass = 'transparent';
+            }
+            this.setState({activeClass});
+        })
+    }
     render() {
         return (
-            <nav className="navbar">
+            <nav className={`navbar ${this.state.activeClass}`}>
                 <div className="nav-center">
                     <div className="nav-header">
                         <Link to="/">
@@ -28,6 +43,9 @@ export default class Navbar extends Component {
                     </li>
                     <li>
                         <Link to="/rooms">Rooms</Link>
+                    </li>
+                    <li>
+                        <Link to="/services">Services</Link>
                     </li>
                     </ul>
                 </div>
