@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from "./Title";
+import {Link} from 'react-router-dom';
 import cocktail from '../images/cocktails.jpg';
 import hiking from '../images/hiking.jpg';
 import shuttle from  '../images/shuttle.jpg';
@@ -11,22 +12,26 @@ export default class Services extends Component {
             {
             title: "Free Cocktails",
             info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse saepe eum asperiores quibusdam molestiae commodi vel, doloribus distinctio neque deleniti. ",
-            image: cocktail
+            image: cocktail,
+            link: "cocktails"
             },
             {
             title: "Beautiful Hiking Views",
             info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse saepe eum asperiores quibusdam molestiae commodi vel, doloribus distinctio neque deleniti. ",
-            image: hiking
+            image: hiking,
+            link: "hiking"
             },
             {
             title: "Free Shuttle Service",
             info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse saepe eum asperiores quibusdam molestiae commodi vel, doloribus distinctio neque deleniti. ",
-            image: shuttle
+            image: shuttle,
+            link: "shuttle"
             },
             {
             title: "Local-brewed Beer",
             info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse saepe eum asperiores quibusdam molestiae commodi vel, doloribus distinctio neque deleniti. ",
-            image: beer
+            image: beer,
+            link: "beer"
             }
         ]
     };
@@ -40,11 +45,12 @@ export default class Services extends Component {
                         return <article key={index} className="service">
                         <div className="service-container">
                         <img src ={item.image} alt={item.title}/>
+                        <div className="service-info">
+                        <Link to={`/services/${item.link}`}><h6>{item.title}</h6></Link>
+                        <p>{item.info}</p></div>
                         </div>
-                        <h6>{item.title}</h6>
-                        <p>{item.info}</p>
                         </article>
-                    })}
+                        })}
                 </div>
             </section>
         )

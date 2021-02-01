@@ -34,11 +34,13 @@ export default class SingleRoom extends Component {
         const [mainImg, ...defaultImg] = images;
         return (
             <>
+            <div className="heroContainerAlt">
             <StyledHero img={mainImg || this.state.defaultBG}>
                 <Banner title={`${name} room`}>
                 <Link to='/rooms' className="btn-primary">Back to Rooms</Link>
                 </Banner>              
             </StyledHero>
+            </div>
             <section className="single-room">
                 <div className="single-room-images">
                     {defaultImg.map((item, index) => {

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 export default function Error() {
     return (
         <Hero>
-            <Banner title="Error 404" subtitle="Page not Found">
+            <Banner title="Error 404" subtitle="Page not Found | Still in progress">
                 <Link to='/' className="btn-primary">
                     Return to Home Page
                 </Link>
